@@ -1,26 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import output from './components/output';
+import input from "./components/input";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(){
+      super();
+
+      this.state = {
+          result: ""
+      }
+  }
+
+  render() {
+      return (
+          <div>
+              <div className="calculator-body">
+                  <h1>Simple Calculator</h1>
+                  <output result={this.state.result}/>
+                  <input onClick={this.onClick}/>
+              </div>
+          </div>
+      );
+  }
 }
 
 export default App;
+view raw
