@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import  Component from 'react';
 import './App.css';
-import output from './components/output';
-import input from "./components/input";
+import output from './Components/output';
+import input from "./Components/input";
 
-class App extends Component {
+class App extends React.Component {
   constructor(){
       super();
 
@@ -12,6 +12,54 @@ class App extends Component {
           result: ""
       }
   }
+
+  onClick = button => {
+
+    if(button === "="){
+        this.calculate()
+    }
+
+    else if(button === "C"){
+        this.reset()
+    }
+    else if(button === "CE"){
+        this.backspace()
+    }
+
+    else {
+        this.setState({
+            result: this.state.result + button
+        })
+    }
+};
+
+
+  calculate = () => {
+    try {
+        this.setState({
+            // eslint-disable-next-line
+            result: (eval(this.state.result) || "" ) + ""
+        })
+    } catch (e) {
+        this.setState({
+            result: "error"
+        })
+
+    }
+};
+
+reset = () => {
+    this.setState({
+        result: ""
+    })
+};
+
+backspace = () => {
+    this.setState({
+        result: this.state.result.slice(0, -1)
+    })
+};
+
 
   render() {
       return (
@@ -27,4 +75,3 @@ class App extends Component {
 }
 
 export default App;
-view raw

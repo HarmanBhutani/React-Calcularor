@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 
-class input extends Component {
+class input extends React.Component {
 
     render() {
         return (
