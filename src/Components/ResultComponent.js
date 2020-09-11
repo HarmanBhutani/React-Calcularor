@@ -1,7 +1,6 @@
-
 import React, {Component} from 'react';
 
-class output extends Component {
+class ResultComponent extends Component {
 
 
     render() {
@@ -10,9 +9,11 @@ class output extends Component {
             <div className="result">
                 <p>{result}</p>
             </div>
-    );
+    )
+        ;
     }
 }
 
 
-export default output;
+export default ResultComponent;
+
